@@ -30,7 +30,7 @@ Running
 The server can be started with the dns_serer.py script. 
 
 Mode 1:
-For example::
+For example:
 
 python dns_serer.py <static IP> 
 
