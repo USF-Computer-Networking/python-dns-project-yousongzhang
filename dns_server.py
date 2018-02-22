@@ -1,4 +1,15 @@
-import socket,sys
+#!/usr/bin/env python
+#title           :dns_server.py
+#description     :DNS server which responses specal/all DNS query with a fake IP
+#author          :yousong zhang
+#date            :20180220
+#version         :1.0
+#usage           :python dns_server.py <IP> <domain>  (add sudo for binding port 53)
+#python_version  :2.7.12
+#==============================================================================
+
+
+import socket,sys,dns.resolver
 
 class DNSQuery:
   def __init__(self, data):
@@ -38,8 +49,25 @@ if __name__ == '__main__':
     while 1:
       data, addr = udps.recvfrom(1024)
       p=DNSQuery(data)
-      udps.sendto(p.respuesta(ip), addr)
-      print 'Respuesta: %s -> %s' % (p.dominio, ip)
+      tmp_ip = ip
+      if len(sys.argv) == 3:     # special domain
+	if sys.argv[2] in p.dominio :
+	      #	print "one this domain (" + sys.argv[2] + ") use fake IP"
+		tmp_ip = ip
+	else:
+		#print "return normal IP"
+                my_resolver = dns.resolver.Resolver()
+		# 8.8.8.8 is Google's public DNS server
+		my_resolver.nameservers = ['8.8.8.8']
+
+		tmp_ip = my_resolver.query('google.com')[0].address
+		
+		#print "only domain (" +sys.argv[2]+ ") return fake IP"
+      else:     
+		#print "all domain use fake IP"
+		tmp_ip = ip
+      udps.sendto(p.respuesta(tmp_ip), addr)
+      print 'Respuesta: %s -> %s' % (p.dominio, tmp_ip)
   except KeyboardInterrupt:
     print 'Finalizando'
     udps.close()
