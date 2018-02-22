@@ -32,7 +32,7 @@ The server can be started with the dns_serer.py script.
 Mode 1:
 For example:
 
-python dns_serer.py <static IP> 
+python dns_serer.py \<static IP\> 
 
 (add sudo for binding reserve port 53)
 
