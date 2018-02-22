@@ -10,7 +10,7 @@ DNS server respone all DNS request with a static IP which is set by user(default
 for exmaple:  
 python dns_server.py  192.168.1.23   
 
-mode 1: 
+mode 2: 
 DNS server respone specail domain DNS request with a static IP and respone other DNS request with normal IP which python queries from 8.8.8.8.
 
 for example:  
