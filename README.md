@@ -3,9 +3,23 @@
 Fake-DNS-Server
 ===============
 
-Fake DNS Server: Resolve domain names and reponse with a static IP. 
+Fake DNS Server: Resolve domain names and reponse with a fake IP. 
 
-this fake DNS server respone DNS request with a static IP which is set by user.
+mode 1: 
+DNS server respone all DNS request with a static IP which is set by user(default : 192.168.1.1).  
+for exmaple:  
+python dns_server.py  192.168.1.23   
+
+mode 1: 
+DNS server respone specail domain DNS request with a static IP and respone other DNS request with normal IP which python queries from 8.8.8.8.
+
+for example:  
+python dns_server.py  192.168.1.23 www.163.com    
+
+only www.163.com will return fake IP( 192.168.1.23), other domain will return correct IP.
+
+
+
  
 
 
@@ -13,10 +27,28 @@ this fake DNS server respone DNS request with a static IP which is set by user.
 Running
 =======
 
-The server can be started with the dns_serer.py script. For example::
+The server can be started with the dns_serer.py script. 
 
-python dns_serer.py <static IP> 
+Mode 1:
+For example:
+
+python dns_serer.py \<static IP\> 
 
 (add sudo for binding reserve port 53)
 
 python dns_serer.py 192.168.1.23   (default DNS respone ip is 192.168.1.1)
+
+Mode 2:
+for example :  
+sudo python dns_server.py  192.168.1.23 www.163.com  
+pyminifakeDNS:: dom.query. 60 IN A 192.168.1.23  
+
+Respuesta: ib.adnxs.com. -> 172.217.6.46  
+Respuesta: mail.google.com. -> 216.58.194.174  
+Respuesta: www.googleapis.com. -> 216.58.194.174  
+Respuesta: www.163.com. -> 192.168.1.23     ****  only this domain fake ****  
+Respuesta: lax1-ib.adnxs.com. -> 216.58.194.174  
+
+
+
+
