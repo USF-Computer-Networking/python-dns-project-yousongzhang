@@ -1,4 +1,4 @@
-import socket
+import socket,sys
 
 class DNSQuery:
   def __init__(self, data):
@@ -27,6 +27,8 @@ class DNSQuery:
 
 if __name__ == '__main__':
   ip='192.168.1.1'
+  if sys.argv[1] is not None:   
+	ip=sys.argv[1]
   print 'pyminifakeDNS:: dom.query. 60 IN A %s' % ip
   
   udps = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
