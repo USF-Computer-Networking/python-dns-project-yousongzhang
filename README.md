@@ -11,7 +11,7 @@ for exmaple:
 python dns_server.py  192.168.1.23   
 
 mode 1: 
-DNS server respone specail domain DNS request with a static IP and respone other DNS request with normal IP which query for 8.8.8.8.
+DNS server respone specail domain DNS request with a static IP and respone other DNS request with normal IP which python queries from 8.8.8.8.
 
 for example:  
 python dns_server.py  192.168.1.23 www.163.com  
