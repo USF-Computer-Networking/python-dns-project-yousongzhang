@@ -6,15 +6,15 @@ Fake-DNS-Server
 Fake DNS Server: Resolve domain names and reponse with a fake IP. 
 
 mode 1: 
-DNS server respone all DNS request with a static IP which is set by user(default : 192.168.1.1).
-for exmaple:
-python dns_server.py  192.168.1.23 
+DNS server respone all DNS request with a static IP which is set by user(default : 192.168.1.1).  
+for exmaple:  
+python dns_server.py  192.168.1.23   
 
 mode 1: 
 DNS server respone specail domain DNS request with a static IP and respone other DNS request with normal IP which query for 8.8.8.8.
 
-for example:
-python dns_server.py  192.168.1.23 www.163.com
+for example:  
+python dns_server.py  192.168.1.23 www.163.com  
 
 
  
