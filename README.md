@@ -37,14 +37,14 @@ python dns_serer.py 192.168.1.23   (default DNS respone ip is 192.168.1.1)
 
 Mode 2:
 for example :  
-sudo python dns_server.py  192.168.1.23 www.163.com
-pyminifakeDNS:: dom.query. 60 IN A 192.168.1.23
+sudo python dns_server.py  192.168.1.23 www.163.com  
+pyminifakeDNS:: dom.query. 60 IN A 192.168.1.23  
 
-Respuesta: ib.adnxs.com. -> 172.217.6.46
-Respuesta: mail.google.com. -> 216.58.194.174
-Respuesta: www.googleapis.com. -> 216.58.194.174
-Respuesta: www.163.com. -> 192.168.1.23     ****  only this domain fake ****
-Respuesta: lax1-ib.adnxs.com. -> 216.58.194.174
+Respuesta: ib.adnxs.com. -> 172.217.6.46  
+Respuesta: mail.google.com. -> 216.58.194.174  
+Respuesta: www.googleapis.com. -> 216.58.194.174  
+Respuesta: www.163.com. -> 192.168.1.23     ****  only this domain fake ****  
+Respuesta: lax1-ib.adnxs.com. -> 216.58.194.174  
 
 
 
